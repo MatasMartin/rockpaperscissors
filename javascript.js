@@ -23,11 +23,11 @@ function getHumanChoice(){
     return message
 }
 
-function playRound(human, computer, humanScore, computerScore){
+function playRound(human, computer){
     let humanChoice 
     let computerChoice
-    humanChoice = human.toLowerCase()
-    computerChoice = computer.toLowerCase()
+    humanChoice = human
+    computerChoice = computer
 
     if(humanChoice == "rock" && computerChoice == "rock") {
         console.log("It's a tie")
@@ -74,20 +74,20 @@ let computerScore = 0
 
 let remember
 
-for(let i = 0; i < 5; i++){
-    computer = getComputerChoice()
-    human = getHumanChoice()
-    console.log("You chose - " + human)
-    console.log("AI chose - " + computer)
 
-    remember = playRound(human, computer)
+computer = getComputerChoice()
+human = getHumanChoice()
+console.log("You chose - " + human)
+console.log("AI chose - " + computer)
 
-    if (remember == 1){
-        humanScore++
-    }else if (remember == 2){
-        computerScore++
-    }
+remember = playRound(human, computer)
+
+if (remember == 1){
+    humanScore++
+}else if (remember == 2){
+    computerScore++
 }
+
 
 console.log("")
 console.log("Your score: " + humanScore)
@@ -101,5 +101,30 @@ if(humanScore>computerScore) {
     console.log("It was a tie loser")
 }
 
+//////////////////////////
+
+
+//////executin shit
+document.addEventListener("DOMContentLoaded", function() {
+
+    const btnRock = document.querySelector("#btnRock");
+    const btnPaper = document.querySelector("#btnPaper");
+    const btnScissors = document.querySelector("#btnScissors");
+    
+    btnRock.addEventListener("click", rockFunction);
+    
+    btnPaper.addEventListener("click", () => {
+    alert("Paper");
+    });
+    
+    btnScissors.addEventListener("click", () => {
+    alert("Scissors");
+    });
+    
+    
+    
+      
+
+})
 
 
