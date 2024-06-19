@@ -70,7 +70,7 @@ function playRound(human, computer){
 
 function playAgain(){
     
-    alert("Do you wanna play again?");
+    
     
 }
 
@@ -121,18 +121,23 @@ function oldMain(mySelection){
     console.log("AI's score: " + computerScore)
     
 
-    if(humanScore==5) {
+    if(humanScore==1) {
         console.log("YOU WON!!!!")
-        playAgain();
+        
+        setTimeout(function(){
+            playAgain();
+        }, 7500);
         aPlayerScore.innerHTML = 0;
         humanScore = 0;
         aComputerScore.innerHTML = 0;
         computerScore = 0;
     }
     
-    if(computerScore==5){
+    if(computerScore==1){
         console.log("You lost LMAO")
-        playAgain();
+        setTimeout(function(){
+            playAgain();
+        }, 7500);
         aPlayerScore.innerHTML = 0;
         humanScore = 0;
         aComputerScore.innerHTML = 0;

@@ -34,7 +34,7 @@
 
     <div class="game">
         <p id="selection">✊</p>
-        <img id="image" src="https://cdn.discordapp.com/attachments/541295970839822336/1252990063176974346/smoke3.png?ex=6674396e&is=6672e7ee&hm=faf6151a442dd91342d614bafb799a95836f6633282be64767c10b767011be9f&" alt="Smoke">
+        <img id="image" draggable="false" (dragstart)="false;" src="https://cdn.discordapp.com/attachments/541295970839822336/1252990063176974346/smoke3.png?ex=6674396e&is=6672e7ee&hm=faf6151a442dd91342d614bafb799a95836f6633282be64767c10b767011be9f&" alt="Smoke">
         <p id="computerSelection">✋</p>
     </div>
 
@@ -62,6 +62,13 @@
     <div class="footer">
         <p>Copyright © MatasMartin 2024</p>
     </div>
+
+    <div class="restart">
+        <p class="winner">YOU WON!</p>
+        <button class="again">PLAY AGAIN</button>
+    </div>
+
+    <div class="black"></div>
     
 </body>
 </html>
