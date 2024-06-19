@@ -64,60 +64,89 @@ function playRound(human, computer){
 
 }
 
+
+function oldMain(mySelection){
+    let computer 
+    let human 
+
+    let humanScore = 0
+    let computerScore = 0
+
+    let remember
+
+    
+
+    computer = getComputerChoice()
+    //human = getHumanChoice()
+    human = mySelection;
+    console.log("You chose - " + human)
+    console.log("AI chose - " + computer)
+
+    remember = playRound(human, computer)
+
+    if (remember == 1){
+        humanScore++
+    }else if (remember == 2){
+        computerScore++
+    }
+
+
+    console.log("")
+    console.log("Your score: " + humanScore)
+    console.log("AI's score: " + computerScore)
+
+    if(humanScore>computerScore) {
+        console.log("YOU WON!!!!")
+    }else if(humanScore<computerScore){
+        console.log("You lost LMAO")
+    }else {
+        console.log("It was a tie loser")
+    }
+}
 // -------------------------------------------------------------------
 
-let computer 
-let human 
-
-let humanScore = 0
-let computerScore = 0
-
-let remember
-
-
-computer = getComputerChoice()
-human = getHumanChoice()
-console.log("You chose - " + human)
-console.log("AI chose - " + computer)
-
-remember = playRound(human, computer)
-
-if (remember == 1){
-    humanScore++
-}else if (remember == 2){
-    computerScore++
-}
-
-
-console.log("")
-console.log("Your score: " + humanScore)
-console.log("AI's score: " + computerScore)
-
-if(humanScore>computerScore) {
-    console.log("YOU WON!!!!")
-}else if(humanScore<computerScore){
-    console.log("You lost LMAO")
-}else {
-    console.log("It was a tie loser")
-}
+let mySelection;
 
 //////////////////////////
 
+function randomlol() {
+    const selection = document.querySelector("selection");
+}
+
+
+
 function rockFunction() {
-    alert("Rock!");
     
+    selection.innerHTML = "✊";
+
+    mySelection = "rock";
+
+    oldMain(mySelection);
+
     return("rock");
 }
 
 function paperFunction() {
-    alert("Paper!");
+    //alert("Paper!");
     
+    selection.innerHTML = "✋";
+
+    mySelection = "paper";
+
+    oldMain(mySelection);
+
     return("paper");
 }
 
 function scissorsFunction() {
-    alert("Scissors!");
+    //alert("Scissors!");
     
+    selection.innerHTML = "✌";
+
+    mySelection = "scissors";
+
+    oldMain(mySelection);
+
     return("scissors");
 }
 

@@ -22,8 +22,8 @@
     
     grid-template-columns: 1fr, 1fr, 1fr;
     grid-template-areas: 'left middle right';
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     align-items: end;
 }
 
@@ -46,7 +46,8 @@
     height: 40vh;
     display: flex;
     justify-content: space-around;
-    gap: 30rem;
+    /* gap: 30rem; */
+    
     
 }
 
@@ -58,9 +59,14 @@
     padding-top: 3rem;
 }
 
+.game img {
+    height: 26rem;
+    width: auto;
+}
+
 .hero {
     background-color: #092437;
-    height: 35vh;
+    height: 20vh;
  
 }
 
@@ -88,11 +94,34 @@
     background-color: #103c5c;
 }
 
+.score {
+    height: 15vh;
+    background-color: #092437;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.score p {
+    font-size: 3rem;
+    color: rgb(173, 173, 173);
+    letter-spacing: 0.2rem;
+    
+}
+
+.score a {
+    font-size: 3rem;
+    color: rgb(173, 173, 173);
+    
+}
+
 .footer {
     height: 5vh;
     background-color: #092437;
     text-align: center;
     font-size: 1.5rem;
+    
 }
 
 .footer p{
