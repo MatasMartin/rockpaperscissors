@@ -138,6 +138,7 @@ function oldMain(mySelection){
         
         setTimeout(function(){
             playAgain();
+            winner.innerHTML = "YOU WON!";
             aPlayerScore.innerHTML = 0;
             humanScore = 0;
             aComputerScore.innerHTML = 0;
@@ -150,6 +151,7 @@ function oldMain(mySelection){
         console.log("You lost LMAO")
         setTimeout(function(){
             playAgain();
+            winner.innerHTML = "YOU LOST!";
             aPlayerScore.innerHTML = 0;
             humanScore = 0;
             aComputerScore.innerHTML = 0;
@@ -176,6 +178,7 @@ function randomlol() {
 
     const restart = document.querySelector("restart");
     const black = document.querySelector("black");
+    const winner = document.querySelector("winner");
     
 
 }
@@ -354,6 +357,10 @@ function cooldown(){
 ///////////////////main
 
 let playerSelection;
+
+setTimeout(function(){
+    lazer.classList.add("move") 
+}, 4500);
 
 //////executin shit
 document.addEventListener("DOMContentLoaded", function() {

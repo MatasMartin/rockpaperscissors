@@ -303,3 +303,24 @@ body {
     transition-duration: 1.5s;
     opacity: 0.8;
 }
+
+#lazer {
+    position: absolute;
+    top: 20vh;
+    rotate: -30deg;
+    left: 100vh;
+    scale: 0.3;
+    
+
+    transition-duration: 0.3s;
+    transition-delay: 0.1s;
+    transform: translateY(0) translateX(0);
+}
+
+/* /////////// */
+
+#lazer:hover {
+    transition-duration: 0.3s;
+    
+    transform: translateY(-150vh) translateX(70vh);
+}
