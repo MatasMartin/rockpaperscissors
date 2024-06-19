@@ -7,13 +7,16 @@ function getComputerChoice(){
     number = Math.floor(Math.random() * 3);
 
     if(number == 0) {
-        return "Rock"
+        computerSelection.innerHTML = "✊";
+        return "rock"
     } 
     else if(number == 1) {
-        return "Paper"
+        computerSelection.innerHTML = "✋";
+        return "paper"
     } 
     else if(number == 2) {
-        return "Scissors"
+        computerSelection.innerHTML = "✌";
+        return "scissors"
     }
 }
 
@@ -28,6 +31,7 @@ function playRound(human, computer){
     let computerChoice
     humanChoice = human
     computerChoice = computer
+
 
     if(humanChoice == "rock" && computerChoice == "rock") {
         console.log("It's a tie")
@@ -93,7 +97,9 @@ function oldMain(mySelection){
 
     console.log("")
     console.log("Your score: " + humanScore)
+    aPlayerScore.innerHTML = humanScore;
     console.log("AI's score: " + computerScore)
+    aComputerScore.innerHTML = computerScore;
 
     if(humanScore>computerScore) {
         console.log("YOU WON!!!!")
@@ -111,6 +117,9 @@ let mySelection;
 
 function randomlol() {
     const selection = document.querySelector("selection");
+    const computerSelection = document.querySelector("computerSelection");
+    const aPlayerScore = document.querySelector("aPlayerScore");
+    const aComputerScore = document.querySelector("aComputerScore");
 }
 
 
