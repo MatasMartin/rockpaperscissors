@@ -11,20 +11,91 @@
     text-align: center;
 }
 
+.left { grid-area: left; }
+.middle { grid-area: middle; }
+.right { grid-area: right; }
+
+.game-top {
+    background-color: #092437;
+    height: 10vh;  
+    display: grid;
+    
+    grid-template-columns: 1fr, 1fr, 1fr;
+    grid-template-areas: 'left middle right';
+    padding-left: 5rem;
+    padding-right: 5rem;
+    align-items: end;
+}
+
+.left, .middle, .right {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+
+.game-top h1 {
+    color: rgb(173, 173, 173);
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+}
+
+.game {
+    background-color: #092437;
+    height: 40vh;
+    display: flex;
+    justify-content: space-around;
+    gap: 30rem;
+    
+}
+
+.game p {
+    text-align: center;
+    font-size: 13rem;
+    padding: 10rem, 10rem;
+    width: 100%;
+    padding-top: 3rem;
+}
+
 .hero {
     background-color: #092437;
-    height: 90vh;
+    height: 35vh;
  
 }
 
 .buttons {
     display: flex;
     justify-content: center;
-    
+    padding-top: 5rem;
+    padding-left: 20rem;
+    padding-right: 20rem;
+    gap: 5rem;
 }
 
 #btnRock, #btnPaper, #btnScissors {
     font-size: 5rem;
     padding: 10rem, 10rem;
     cursor: pointer;
+    border-radius: 20px;
+    width: 100%;
+
+    background-color: #0d334e;
+    border: 0;
+}
+
+#btnRock:hover, #btnPaper:hover, #btnScissors:hover {
+    background-color: #103c5c;
+}
+
+.footer {
+    height: 5vh;
+    background-color: #092437;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.footer p{
+    font-family: 'Trebuchet MS', Arial, sans-serif; 
+    color: cornsilk;  
 }
