@@ -70,9 +70,19 @@ function playRound(human, computer){
 
 function playAgain(){
     
+    restart.style.opacity = 1;
+    black.style.opacity = 0.8;
+
+    restart.style.pointerEvents = "all";
+    black.style.pointerEvents = "all";
+
+    restart.classList.add('move');
+    black.classList.add('move');
     
-    
+    // kai paspausiu reset images
 }
+
+
 
 function oldMain(mySelection){
     let computer 
@@ -112,6 +122,8 @@ function oldMain(mySelection){
 
     console.log("")
 
+    
+
     setTimeout(function(){
         aPlayerScore.innerHTML = humanScore;
         aComputerScore.innerHTML = computerScore;   
@@ -121,27 +133,28 @@ function oldMain(mySelection){
     console.log("AI's score: " + computerScore)
     
 
-    if(humanScore==1) {
+    if(humanScore==5) {
         console.log("YOU WON!!!!")
         
         setTimeout(function(){
             playAgain();
+            aPlayerScore.innerHTML = 0;
+            humanScore = 0;
+            aComputerScore.innerHTML = 0;
+            computerScore = 0;
         }, 7500);
-        aPlayerScore.innerHTML = 0;
-        humanScore = 0;
-        aComputerScore.innerHTML = 0;
-        computerScore = 0;
+        
     }
     
-    if(computerScore==1){
+    if(computerScore==5){
         console.log("You lost LMAO")
         setTimeout(function(){
             playAgain();
+            aPlayerScore.innerHTML = 0;
+            humanScore = 0;
+            aComputerScore.innerHTML = 0;
+            computerScore = 0;
         }, 7500);
-        aPlayerScore.innerHTML = 0;
-        humanScore = 0;
-        aComputerScore.innerHTML = 0;
-        computerScore = 0;
     }
 }
 // -------------------------------------------------------------------
@@ -161,6 +174,24 @@ function randomlol() {
     const tie = document.querySelector("tie");
     const whoWon = document.querySelector("whoWon");
 
+    const restart = document.querySelector("restart");
+    const black = document.querySelector("black");
+    
+
+}
+
+function againFunction(){
+    
+    restart.classList.remove('move');
+    restart.classList.remove('move');
+    
+    black.style.opacity = 0;
+    restart.style.opacity = 0;
+
+    console.log("PASPAUDZIAU")
+
+    black.style.pointerEvents = "none";
+    restart.style.pointerEvents = "none";
 }
 
 function resetImages() {
@@ -330,12 +361,15 @@ document.addEventListener("DOMContentLoaded", function() {
     const btnRock = document.querySelector("#btnRock");
     const btnPaper = document.querySelector("#btnPaper");
     const btnScissors = document.querySelector("#btnScissors");
+    const again = document.querySelector("#again");
     
     btnRock.addEventListener("click", rockFunction);
     
     btnPaper.addEventListener("click", paperFunction);
     
     btnScissors.addEventListener("click", scissorsFunction);
+
+    again.addEventListener("click", againFunction);
     
     
     

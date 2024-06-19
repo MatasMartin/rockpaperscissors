@@ -232,7 +232,7 @@ body {
     
 }
 
-.restart {
+#restart {
     position: absolute;
     
     top: 50%;
@@ -251,7 +251,9 @@ body {
     justify-content: center;
 
     pointer-events: none;
-    opacity: 0;
+    opacity: 1;
+    scale: 0;
+    transform-origin: center;
 }
 
 
@@ -263,29 +265,41 @@ body {
     
 }
 
-.again {
+#again {
     font-size: 4rem;
     background-color: #0c2e47;
     border: 0px;
     padding: 1rem 1rem;
-    border-radius: 20px;
+    border-radius:5px;
     cursor: pointer;
     margin-top: 2rem;
 }
 
-.again:hover {
+#again:hover {
     background-color: #0d334e;
 }
 
-.black {
+#black {
     position: absolute;
     top: 0vh;
     left: 0vh;
     background-color: black;
     padding: 100rem 200rem;
-    opacity: 0.6;
+
     z-index: 0;
     
     pointer-events: none;
     opacity: 0;
+}
+
+
+#restart.move {
+    transition-duration: 1.5s;
+    
+    scale: 1;
+}
+
+#black.move {
+    transition-duration: 1.5s;
+    opacity: 0.8;
 }
