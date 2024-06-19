@@ -3,6 +3,10 @@
     font-family: 'VT323', 'Trebuchet MS', Arial, sans-serif;
 }
 
+body {
+    overflow: hidden; /
+}
+
 .top{
     background-color: #0d334e;
     color: 	#ffe505;
@@ -39,6 +43,27 @@
     color: rgb(173, 173, 173);
     font-size: 3rem;
     letter-spacing: 0.2rem;
+}
+
+#whoWon {
+    height: 0vh;
+    position: absolute;
+    left: 0%;
+    /* human: left: 46%; */
+    /* tie: left: 45.5%; */
+    /* robot: left: 45.5%; */
+    top: 0vh;
+    /* human: top: 15vh */
+    /* tie: top: 34vh */
+    /* robot: top: -2vh */
+    display: flex;
+    flex-direction: column;
+}
+
+#whoWon p {
+    font-size: 8rem;
+    opacity: 0;
+    z-index: 0;
 }
 
 .game {
@@ -172,4 +197,24 @@
     opacity: 0;
     scale: 0;
     transition-property:none;
+}
+
+#human.move {
+    transition-duration: 1.5s;
+    transform: translateY(90vh);
+    opacity: 0;
+    
+}
+
+#robot.move {
+    transition-duration: 1.5s;
+    transform: translateY(90vh);
+    opacity: 0;
+    
+}
+#tie.move {
+    transition-duration: 1.5s;
+    transform: translateY(90vh);
+    opacity: 0;
+    
 }

@@ -69,9 +69,9 @@ function playRound(human, computer){
 }
 
 function playAgain(){
+    
     alert("Do you wanna play again?");
-    aPlayerScore.innerHTML = 0;
-    aComputerScore.innerHTML = 0;
+    
 }
 
 function oldMain(mySelection){
@@ -95,25 +95,48 @@ function oldMain(mySelection){
 
     if (remember == 1){
         humanScore++
+        setTimeout(function(){
+            functionHuman(); 
+        }, 4500);
     }else if (remember == 2){
         computerScore++
+        setTimeout(function(){
+            functionRobot(); 
+        }, 4500);
+    }else{
+        setTimeout(function(){
+            functionTie(); 
+        }, 4500);
     }
 
 
     console.log("")
+
+    setTimeout(function(){
+        aPlayerScore.innerHTML = humanScore;
+        aComputerScore.innerHTML = computerScore;   
+    }, 6400);
+
     console.log("Your score: " + humanScore)
-    aPlayerScore.innerHTML = humanScore;
     console.log("AI's score: " + computerScore)
-    aComputerScore.innerHTML = computerScore;
+    
 
     if(humanScore==5) {
         console.log("YOU WON!!!!")
         playAgain();
+        aPlayerScore.innerHTML = 0;
+        humanScore = 0;
+        aComputerScore.innerHTML = 0;
+        computerScore = 0;
     }
     
     if(computerScore==5){
         console.log("You lost LMAO")
         playAgain();
+        aPlayerScore.innerHTML = 0;
+        humanScore = 0;
+        aComputerScore.innerHTML = 0;
+        computerScore = 0;
     }
 }
 // -------------------------------------------------------------------
@@ -128,7 +151,11 @@ function randomlol() {
     const aPlayerScore = document.querySelector("aPlayerScore");
     const aComputerScore = document.querySelector("aComputerScore");
     const image = document.querySelector("image");
-    
+    const human = document.querySelector("human");
+    const robot = document.querySelector("robot");
+    const tie = document.querySelector("tie");
+    const whoWon = document.querySelector("whoWon");
+
 }
 
 function resetImages() {
@@ -142,6 +169,18 @@ function resetImages() {
 
     selection.style.opacity = 0;
     computerSelection.style.opacity = 0;
+
+
+    human.classList.remove('move');
+    robot.classList.remove('move');
+    tie.classList.remove('move');
+
+    human.style.opacity = 0;
+    robot.style.opacity = 0;
+    tie.style.opacity = 0;
+
+    whoWon.style.top = "0vh";
+    whoWon.style.left = "0%";
 
 }
 
@@ -162,11 +201,52 @@ function gameAnimate() {
         selection.classList.add('back');
     }, 5200);
     
-    setTimeout(resetImages, 6750);
+    setTimeout(resetImages, 7500);
     
     
 }
 
+function humanAnimate(){
+    human.style.opacity = 1;
+    human.classList.add('move');
+}
+
+function robotAnimate(){
+    robot.style.opacity = 1;
+    robot.classList.add('move');
+}
+
+function tieAnimate(){
+    tie.style.opacity = 1;
+    tie.classList.add('move');
+}
+
+ function functionHuman(){
+    whoWon.style.top = "15vh";
+    whoWon.style.left = "46%";
+    robot.style.opacity = 0;
+    human.style.opacity = 1;
+    tie.style.opacity = 0;
+    setTimeout(humanAnimate, 2000);
+ }
+
+ function functionRobot(){
+    whoWon.style.top = "-2vh";
+    whoWon.style.left = "45.5%";
+    robot.style.opacity = 1;
+    human.style.opacity = 0;
+    tie.style.opacity = 0;
+    setTimeout(robotAnimate, 2000);
+ }
+
+ function functionTie(){
+    whoWon.style.top = "34vh";
+    whoWon.style.left = "45.5%";
+    robot.style.opacity = 0;
+    human.style.opacity = 0;
+    tie.style.opacity = 1;
+    setTimeout(tieAnimate, 2000);
+ }
 
 function rockFunction() {
     
@@ -230,7 +310,7 @@ function cooldown(){
     btnPaper.disabled = true;
     btnScissors.disabled = true;
 
-    setTimeout(buttonCooldown,6750);
+    setTimeout(buttonCooldown,7500);
 
 }
 
