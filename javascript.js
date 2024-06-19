@@ -68,13 +68,18 @@ function playRound(human, computer){
 
 }
 
+function playAgain(){
+    alert("Do you wanna play again?");
+    aPlayerScore.innerHTML = 0;
+    aComputerScore.innerHTML = 0;
+}
 
 function oldMain(mySelection){
     let computer 
     let human 
 
-    let humanScore = 0
-    let computerScore = 0
+    let humanScore = aPlayerScore.innerHTML;
+    let computerScore = aComputerScore.innerHTML;
 
     let remember
 
@@ -101,12 +106,14 @@ function oldMain(mySelection){
     console.log("AI's score: " + computerScore)
     aComputerScore.innerHTML = computerScore;
 
-    if(humanScore>computerScore) {
+    if(humanScore==5) {
         console.log("YOU WON!!!!")
-    }else if(humanScore<computerScore){
+        playAgain();
+    }
+    
+    if(computerScore==5){
         console.log("You lost LMAO")
-    }else {
-        console.log("It was a tie loser")
+        playAgain();
     }
 }
 // -------------------------------------------------------------------
@@ -120,9 +127,17 @@ function randomlol() {
     const computerSelection = document.querySelector("computerSelection");
     const aPlayerScore = document.querySelector("aPlayerScore");
     const aComputerScore = document.querySelector("aComputerScore");
+    const image = document.querySelector("image");
 }
 
-
+function gameAnimate() {
+    selection.classList.toggle('move');
+    computerSelection.classList.toggle('move');
+    setTimeout(function(){
+        image.classList.toggle('move');
+    }, 2000);
+    
+}
 
 function rockFunction() {
     
@@ -130,6 +145,10 @@ function rockFunction() {
 
     mySelection = "rock";
 
+    gameAnimate();
+
+    cooldown();
+    
     oldMain(mySelection);
 
     return("rock");
@@ -141,6 +160,10 @@ function paperFunction() {
     selection.innerHTML = "✋";
 
     mySelection = "paper";
+
+    gameAnimate();
+
+    cooldown();
 
     oldMain(mySelection);
 
@@ -154,10 +177,31 @@ function scissorsFunction() {
 
     mySelection = "scissors";
 
+    gameAnimate();
+
+    cooldown();
+
     oldMain(mySelection);
 
     return("scissors");
 }
+
+function buttonCooldown(){
+    btnRock.disabled = false;
+    btnPaper.disabled = false;
+    btnScissors.disabled = false;
+}
+
+function cooldown(){
+
+    btnRock.disabled = true;
+    btnPaper.disabled = true;
+    btnScissors.disabled = true;
+
+    setTimeout(buttonCooldown,1500);
+
+}
+
 
 ///////////////////main
 

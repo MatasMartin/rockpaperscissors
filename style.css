@@ -57,11 +57,16 @@
     padding: 10rem, 10rem;
     width: 100%;
     padding-top: 3rem;
+    transition-duration: 5s;
 }
 
 .game img {
     height: 26rem;
     width: auto;
+    transition-duration: 3s;
+    z-index: 10;
+    opacity: 0;
+    scale: 0.5;
 }
 
 .hero {
@@ -127,4 +132,19 @@
 .footer p{
     font-family: 'Trebuchet MS', Arial, sans-serif; 
     color: cornsilk;  
+}
+
+#selection.move {
+    transform:  translateX(calc(40vw - 150px)) rotate(30deg) scale(0.8);
+    
+}
+
+#computerSelection.move {
+    transform:  translateX(calc(-40vw + 150px)) rotate(-30deg) scale(0.8);
+}
+
+#image.move {
+    opacity: 1;
+    transform: rotate(1800deg);
+    scale: 1.3;
 }
