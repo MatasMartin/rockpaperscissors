@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    font-family: 'VT323', 'Trebuchet MS', Arial, sans-serif;
+}
+
+.top{
+    background-color: #0d334e;
+    color: 	#ffe505;
+    height: 10vh;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.hero {
+    background-color: #092437;
+    height: 90vh;
+ 
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    
+}
+
+#btnRock, #btnPaper, #btnScissors {
+    font-size: 5rem;
+    padding: 10rem, 10rem;
+    cursor: pointer;
+}

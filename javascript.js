@@ -19,7 +19,7 @@ function getComputerChoice(){
 
 function getHumanChoice(){
     let message
-    message = prompt("Choose your turn: ")
+    message = "Paper";
     return message
 }
 
@@ -103,6 +103,27 @@ if(humanScore>computerScore) {
 
 //////////////////////////
 
+function rockFunction() {
+    alert("Rock!");
+    
+    return("rock");
+}
+
+function paperFunction() {
+    alert("Paper!");
+    
+    return("paper");
+}
+
+function scissorsFunction() {
+    alert("Scissors!");
+    
+    return("scissors");
+}
+
+///////////////////main
+
+let playerSelection;
 
 //////executin shit
 document.addEventListener("DOMContentLoaded", function() {
@@ -113,13 +134,9 @@ document.addEventListener("DOMContentLoaded", function() {
     
     btnRock.addEventListener("click", rockFunction);
     
-    btnPaper.addEventListener("click", () => {
-    alert("Paper");
-    });
+    btnPaper.addEventListener("click", paperFunction);
     
-    btnScissors.addEventListener("click", () => {
-    alert("Scissors");
-    });
+    btnScissors.addEventListener("click", scissorsFunction);
     
     
     
