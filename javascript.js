@@ -136,6 +136,12 @@ function gameAnimate() {
     setTimeout(function(){
         image.classList.toggle('move');
     }, 2000);
+    setTimeout(function(){
+        image.classList.toggle('back');
+        computerSelection.classList.toggle('back');
+        selection.classList.toggle('back');
+    }, 5200);
+    
     
 }
 
@@ -198,7 +204,7 @@ function cooldown(){
     btnPaper.disabled = true;
     btnScissors.disabled = true;
 
-    setTimeout(buttonCooldown,1500);
+    setTimeout(buttonCooldown,6750);
 
 }
 
