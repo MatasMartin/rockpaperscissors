@@ -128,22 +128,45 @@ function randomlol() {
     const aPlayerScore = document.querySelector("aPlayerScore");
     const aComputerScore = document.querySelector("aComputerScore");
     const image = document.querySelector("image");
+    
+}
+
+function resetImages() {
+    
+    selection.classList.remove('move');
+    computerSelection.classList.remove('move');
+    image.classList.remove('move');
+    image.classList.remove('back');
+    computerSelection.classList.remove('back');
+    selection.classList.remove('back');
+
+    selection.style.opacity = 0;
+    computerSelection.style.opacity = 0;
+
 }
 
 function gameAnimate() {
-    selection.classList.toggle('move');
-    computerSelection.classList.toggle('move');
+
+    selection.style.opacity = 1;
+    computerSelection.style.opacity = 1;
+
+    selection.classList.add('move');
+    computerSelection.classList.add('move');
     setTimeout(function(){
-        image.classList.toggle('move');
+        image.classList.add('move');
     }, 2000);
+    
     setTimeout(function(){
-        image.classList.toggle('back');
-        computerSelection.classList.toggle('back');
-        selection.classList.toggle('back');
+        image.classList.add('back');
+        computerSelection.classList.add('back');
+        selection.classList.add('back');
     }, 5200);
+    
+    setTimeout(resetImages, 6750);
     
     
 }
+
 
 function rockFunction() {
     
@@ -151,7 +174,9 @@ function rockFunction() {
 
     mySelection = "rock";
 
-    gameAnimate();
+    gameAnimate(); 
+    
+    
 
     cooldown();
     
@@ -168,6 +193,7 @@ function paperFunction() {
     mySelection = "paper";
 
     gameAnimate();
+    
 
     cooldown();
 
@@ -183,7 +209,7 @@ function scissorsFunction() {
 
     mySelection = "scissors";
 
-    gameAnimate();
+    gameAnimate(); 
 
     cooldown();
 
