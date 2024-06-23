@@ -172,6 +172,20 @@ body {
     color: cornsilk;  
 }
 
+.footer a {
+    position: absolute;
+    top:845px;
+    left: 1025px;
+    transform: scale(0.1);
+    transition-duration: 0.3s;
+    
+}
+
+.footer a:hover {
+    
+    transform: scale(0.12) rotate(360deg);
+}
+
 /* //////////////////////////////////////// */
 
 #selection.move {
